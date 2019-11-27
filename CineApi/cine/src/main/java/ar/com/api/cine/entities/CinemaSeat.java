@@ -36,6 +36,9 @@ public class CinemaSeat {
         this.hasDBOX = false;
     }
 
+    public CinemaSeat() {
+    }
+
 
 
 
