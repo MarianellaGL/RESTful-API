@@ -3,8 +3,9 @@ package ar.com.api.cine.entities;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+//baul= cada elemento tiene tiene un id y lo referencias en todos lados por el id
 
-@Document(collection = "User")
+@Document(collection = "Users")
 public class User {
     @Id
     private ObjectId _id;

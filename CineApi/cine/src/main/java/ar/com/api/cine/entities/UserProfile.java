@@ -1,9 +1,16 @@
 package ar.com.api.cine.entities;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "UserProfiles")
 public class UserProfile {
 
+    @Id
+    private ObjectId _id;
+
     public String alias;
-    private int creditCard;
     public String previousPurchases;
 
     public String getAlias() {
@@ -12,14 +19,6 @@ public class UserProfile {
 
     public void setAlias(String alias) {
         this.alias = alias;
-    }
-
-    public int getCreditCard() {
-        return creditCard;
-    }
-
-    public void setCreditCard(int creditCard) {
-        this.creditCard = creditCard;
     }
 
     public String getPreviousPurchases() {
