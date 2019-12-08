@@ -15,6 +15,7 @@ public class Theater {
     private boolean hasDBox = false;
     private Integer floor;
     private Integer cinemaRoomNum;
+    
 
     public ObjectId get_id() {
         return _id;

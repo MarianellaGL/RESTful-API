@@ -3,6 +3,7 @@ package ar.com.api.cine.entities;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.*;
 
 @Document(collection = "Cines")
 public class Cinema {
@@ -10,6 +11,8 @@ public class Cinema {
     private ObjectId _id;
     private String locationCinema;
     private String cinemaCuit;
+    public Map<String, Movie> moviesOn = new HashMap <String, Movie>();
+    
 
     public ObjectId get_id() {
         return _id;
