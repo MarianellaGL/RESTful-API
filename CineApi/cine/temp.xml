@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GeocodeResponse>
+ <status>OK</status>
+ <result>
+  <type>locality</type>
+  <type>political</type>
+  <formatted_address>Ponferrada, León, España</formatted_address>
+  <address_component>
+   <long_name>Ponferrada</long_name>
+   <short_name>Ponferrada</short_name>
+   <type>locality</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Ponferrada</long_name>
+   <short_name>Ponferrada</short_name>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>León</long_name>
+   <short_name>León</short_name>
+   <type>administrative_area_level_2</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Castilla y León</long_name>
+   <short_name>CL</short_name>
+   <type>administrative_area_level_1</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>España</long_name>
+   <short_name>ES</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>42.5499958</lat>
+    <lng>-6.5982590</lng>
+   </location>
+   <location_type>APPROXIMATE</location_type>
+   <viewport>
+    <southwest>
+     <lat>42.5384513</lat>
+     <lng>-6.6412538</lng>
+    </southwest>
+    <northeast>
+     <lat>42.5693582</lat>
+     <lng>-6.5784503</lng>
+    </northeast>
+   </viewport>
+   <bounds>
+    <southwest>
+     <lat>42.5384513</lat>
+     <lng>-6.6412538</lng>
+    </southwest>
+    <northeast>
+     <lat>42.5693582</lat>
+     <lng>-6.5784503</lng>
+    </northeast>
+   </bounds>
+  </geometry>
+ </result>
+</GeocodeResponse>

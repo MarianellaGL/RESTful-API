@@ -1,15 +1,18 @@
 package ar.com.api.cine.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.omg.CORBA.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 
 import ar.com.api.cine.entities.User;
 import ar.com.api.cine.entities.UserProfile;
 import ar.com.api.cine.repo.UserRepository;
+import ar.com.api.cine.security.crypto.Crypto;
 
 @Service
 public class UserService {
@@ -18,9 +21,8 @@ public class UserService {
     UserRepository repo;
 
     @Autowired
-    //EmailService emailService;
+    // EmailService emailService;
 
-    
     public ObjectId create(String fullName, String dni, String email, String username, int edad, String password,
             String userEmail, String alias, String previousPurchases) throws UserException {
 
@@ -38,15 +40,11 @@ public class UserService {
 
         u.setPassword(passwordEncriptada);
 
-
         UserProfile up = new UserProfile();
         up.setAlias(alias);
         up.setPreviousPurchases(previousPurchases);
-             
-        up.save;
 
-        emailService.SendEmail(u.getUserEmail() "Registration Succeed :)" );
-        
+        up.grabar();
 
         return u.get_id();
 
@@ -63,11 +61,10 @@ public class UserService {
 
     public User searchByUsername(String username) {
 
-        return repo.findByusername(username);
+        return repo.findByUsername(username);
     }
 
-
-    public User buscarPorId(int id) {
+    public User buscarPorId(ObjectId id) {
 
         Optional<User> u = repo.findById(id);
 
@@ -76,21 +73,19 @@ public class UserService {
         return null;
     }
 
-    public void login(String username, String password){
+    public void login(String username, String password) {
 
-        User u = repo.findByusername(username);
+        User u = repo.findByUsername(username);
 
-        if( u== null || !u.getPassword().equals(Crypto.encrypt(password, u.getUsername()))) {
+        if (u == null || !u.getPassword().equals(Crypto.encrypt(password, u.getUsername()))) {
 
             throw new BadCredentialsException("usuario o contraseña inválida");
 
         }
     }
 
-	public User buscarPorEmail( String email) {
-        return repo.findByUserEmail(email);
-	}
+    public User buscarPorEmail(String email) {
+        return repo.findByEmail(email);
+    }
 
-}
-    
 }
