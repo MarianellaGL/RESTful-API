@@ -1,6 +1,5 @@
 package ar.com.api.cine.entities;
 
-import java.util.*;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -9,12 +8,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Theater {
     @Id
     private ObjectId _id;
-    private Map<String, CinemaSeat> cinemaSeats = new HashMap<String, CinemaSeat>();
-    private boolean hasIMAX = false;
-    private boolean has3D = true;
-    private boolean hasDBox = false;
-    private Integer floor;
-    private Integer cinemaRoomNum;
+    public boolean hasIMAX = false;
+    public boolean has3D = true;
+    public boolean hasDBox = false;
+    public boolean available = true; //seria un request que llame a una api que pregunte si está disponible la pelicula para ver y en qué horario ¿Es del back o del front?
+ 
     
 
     public ObjectId get_id() {
@@ -23,14 +21,6 @@ public class Theater {
 
     public void set_id(ObjectId _id) {
         this._id = _id;
-    }
-
-    public Map<String, CinemaSeat> getCinemaSeats() {
-        return cinemaSeats;
-    }
-
-    public void setCinemaSeats(Map<String, CinemaSeat> cinemaSeats) {
-        this.cinemaSeats = cinemaSeats;
     }
 
     public boolean isHasIMAX() {
@@ -57,21 +47,6 @@ public class Theater {
         this.hasDBox = hasDBox;
     }
 
-    public Integer getFloor() {
-        return floor;
-    }
-
-    public void setFloor(Integer floor) {
-        this.floor = floor;
-    }
-
-    public Integer getCinemaRoomNum() {
-        return cinemaRoomNum;
-    }
-
-    public void setCinemaRoomNum(Integer cinemaRoomNum) {
-        this.cinemaRoomNum = cinemaRoomNum;
-    }
     
     public Theater() {
     }

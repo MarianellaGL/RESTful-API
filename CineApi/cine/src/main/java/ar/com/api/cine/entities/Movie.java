@@ -11,7 +11,6 @@ public class Movie {
     public String movieOn;
     public String directedBy;
     public String actedBy;
-    public String ageRestriction;
     
 
     public Object get_id() {
@@ -44,14 +43,6 @@ public class Movie {
 
     public void setActedBy(String actedBy) {
         this.actedBy = actedBy;
-    }
-
-    public String getAgeRestriction() {
-        return ageRestriction;
-    }
-
-    public void setAgeRestriction(String ageRestriction) {
-        this.ageRestriction = ageRestriction;
     }
 
     public Movie() {

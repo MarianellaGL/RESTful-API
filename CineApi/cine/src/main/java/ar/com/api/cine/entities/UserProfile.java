@@ -11,6 +11,7 @@ public class UserProfile {
     private ObjectId _id;
 
     public String alias;
+    public Integer age;
     public String previousPurchases;
 
     public String getAlias() {
@@ -34,6 +35,22 @@ public class UserProfile {
 
 	public void grabar() {
 	}
+
+    public ObjectId get_id() {
+        return _id;
+    }
+
+    public void set_id(ObjectId _id) {
+        this._id = _id;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
     
 
 
